@@ -16,7 +16,6 @@ namespace NTP_Backend2.Models
     {
         public int Id { get; set; }
         public string ProductName { get; set; }
-        public int UnitId { get; set; }
-        public int DeliveryTimeId { get; set; }
+        public Nullable<int> UnitID { get; set; }
     }
 }

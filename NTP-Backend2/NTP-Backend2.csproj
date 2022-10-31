@@ -251,8 +251,8 @@
     <Compile Include="Controllers\DeliveryTimesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Models\IEnumerable.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\UnitController.cs" />
+    <Compile Include="Models\ProductWithUnit.cs" />
     <Compile Include="Models\DeliveryTime.cs">
       <DependentUpon>ProductModel.tt</DependentUpon>
     </Compile>

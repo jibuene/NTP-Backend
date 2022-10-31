@@ -8,16 +8,15 @@
     <Property Name="min" Type="Int32" Nullable="false" />
     <Property Name="max" Type="Int32" Nullable="false" />
     <Property Name="time" Type="Int32" Nullable="false" />
-    <Property Name="ProductId" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProductName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="UnitId" Type="Int32" Nullable="false" />
-    <Property Name="DeliveryTimeId" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UnitID" Type="Int32" />
   </EntityType>
   <EntityType Name="Unit">
     <Key>

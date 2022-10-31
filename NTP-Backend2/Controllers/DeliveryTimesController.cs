@@ -23,18 +23,39 @@ namespace NTP_Backend2.Controllers
         }
 
         // POST: api/DeliveryTimes
-        public void Post([FromBody]string value)
+        public void Post([FromBody]DeliveryTime DeliveryTimeData)
         {
+            using (ProductEntities entities = new ProductEntities())
+            {
+                var DeliveryTime = entities.Set<DeliveryTime>();
+                DeliveryTime.Add(DeliveryTimeData);
+                entities.SaveChanges();
+            }
         }
 
         // PUT: api/DeliveryTimes/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]DeliveryTime DeliveryTimeData)
         {
-        }
+            using (ProductEntities entities = new ProductEntities())
+            {
+                var dt = entities.DeliveryTime
+                    .Where(s => s.Id == id)
+                    .FirstOrDefault();
 
+                entities.Entry(dt).State = System.Data.Entity.EntityState.Deleted;
+
+                var DeliveryTime = entities.Set<DeliveryTime>();
+                DeliveryTime.Add(DeliveryTimeData);
+                entities.SaveChanges();
+            }
+
+
+        }
+        /*
         // DELETE: api/DeliveryTimes/5
         public void Delete(int id)
         {
         }
+        */
     }
 }

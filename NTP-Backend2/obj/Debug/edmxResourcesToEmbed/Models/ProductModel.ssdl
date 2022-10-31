@@ -4,26 +4,25 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
     <Property Name="min" Type="int" Nullable="false" />
     <Property Name="max" Type="int" Nullable="false" />
     <Property Name="time" Type="int" Nullable="false" />
-    <Property Name="ProductId" Type="int" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProductName" Type="nvarchar" MaxLength="255" Nullable="false" />
-    <Property Name="UnitId" Type="int" Nullable="false" />
-    <Property Name="DeliveryTimeId" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UnitID" Type="int" />
   </EntityType>
   <EntityType Name="Unit">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="UnitName" Type="nvarchar" MaxLength="55" />
   </EntityType>
   <EntityContainer Name="ProductModelStoreContainer">

@@ -20,7 +20,7 @@ namespace NTP_Backend2.Controllers
                 var query =
                     entities.Product.Join(
                         entities.Unit,
-                        Product => Product.UnitId,
+                        Product => Product.UnitID,
                         Unit => Unit.Id,
                         (Product, Unit) => new FullProduct
                         {
@@ -32,25 +32,41 @@ namespace NTP_Backend2.Controllers
                 return query;
             }
         }
+        /*
         // GET: api/Product/5
         public string Get(int id)
         {
             return "value";
         }
-
+        */
         // POST: api/Product
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Product ProductData)
         {
+            using (ProductEntities entities = new ProductEntities())
+            {
+                var Product = entities.Set<Product>();
+                Product.Add(ProductData);
+                entities.SaveChanges();
+            }
         }
-
+        /*
         // PUT: api/Product/5
         public void Put(int id, [FromBody]string value)
         {
         }
-
+        */
         // DELETE: api/Product/5
         public void Delete(int id)
         {
+            using (ProductEntities entities = new ProductEntities())
+            {
+                var product = entities.Product
+                    .Where(s => s.Id == id)
+                    .FirstOrDefault();
+
+                entities.Entry(product).State = System.Data.Entity.EntityState.Deleted;
+                entities.SaveChanges();
+            }
         }
     }
 }

@@ -18,6 +18,6 @@ namespace NTP_Backend2.Models
         public int min { get; set; }
         public int max { get; set; }
         public int time { get; set; }
-        public Nullable<int> ProductId { get; set; }
+        public int ProductId { get; set; }
     }
 }
